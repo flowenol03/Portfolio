@@ -25,7 +25,7 @@ function Contact() {
           </a>
         </li>
         <li>
-          <a href="https://www.instagram.com/its_hsemahtarp_0.3?igsh=MW1uMmlodHd0eXBkYw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/its_hsemahtarp_0.3/" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-instagram"></i> Instagram
           </a>
         </li>
