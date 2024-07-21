@@ -50,7 +50,6 @@
   padding: 0;
   margin: 0;
   display: flex; /* Ensure horizontal layout */
-  flex-wrap: wrap; /* Allow items to wrap to next line on smaller screens */
   justify-content: space-between; /* Distribute items evenly */
 }
 
@@ -121,11 +120,12 @@
     font-size: 1.5rem;
   }
 
-  .Header nav ul li {
-    margin: 0 2px;
+  .Header nav ul {
+    flex-direction: row; /* Keep list items on the same line */
+    width: 100%; /* Take up full width of container */
   }
-
-  .Header nav ul li a {
-    font-size: 1rem;
+  .Header nav ul li {
+    margin: 0 5px; /* Reduce margin to fit on smaller screens */
+    font-size: 1rem; /* Reduce font size to fit on smaller screens */
   }
 }
