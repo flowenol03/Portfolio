@@ -40,6 +40,7 @@
 
 .Header nav ul li {
   margin: 0; /* Remove margin */
+  position: relative; /* Allow positioning of the hover effect */
 }
 
 .Header nav ul li a {
@@ -53,24 +54,14 @@
   transition: text-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.Header nav ul li a::before {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background-color: #0ff;
-  transform-origin: left;
-  transition: width 0.3s ease;
-}
 
 .Header nav ul li a:hover::before {
-  width: 100%;
+  width: 100%; /* Extend the line to the full width of the text on hover */
+  height: auto;
 }
 
 .Header nav ul li a:hover {
-  text-shadow: 0 0 20px #0ff, 0 0 30px #0ff;
+  text-shadow: 0 0 40px #0ff, 0 0 30px #0ff;
 }
 
 /* Responsive Styles */
