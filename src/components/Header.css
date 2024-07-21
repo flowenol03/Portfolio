@@ -38,12 +38,13 @@
 .Header nav {
   display: flex; /* Ensure horizontal layout */
   justify-content: center; /* Center items horizontally */
+  margin-top: 15px; /* Space between h1 and nav */
 }
 
 .Header nav ul {
   list-style: none;
   padding: 0;
-  margin: 15px 0 0;
+  margin: 0;
   display: flex; /* Ensure horizontal layout */
 }
 
@@ -97,7 +98,7 @@
   }
 
   .Header nav ul li {
-    margin: 0 5px; /* Adjusted margin for smaller screens */
+    margin: 0 5px;
   }
 
   .Header nav ul li a {
@@ -115,7 +116,7 @@
   }
 
   .Header nav ul li {
-    margin: 0 2px; /* Further decreased margin */
+    margin: 0 2px;
   }
 
   .Header nav ul li a {
