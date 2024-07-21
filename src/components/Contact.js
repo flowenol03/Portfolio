@@ -25,6 +25,11 @@ function Contact() {
           </a>
         </li>
         <li>
+          <a href="https://www.instagram.com/its_hsemahtarp_0.3?igsh=MW1uMmlodHd0eXBkYw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-instagram"></i> Instagram
+          </a>
+        </li>
+        <li>
           <a href="https://drive.google.com/file/d/13qxb7EA2AogbJfC9sEY2A3oJCpfrxzTT/view?usp=sharing" download="PrathameshKhandekar.pdf">
             <i className="fas fa-download"></i> Download CV
           </a>
