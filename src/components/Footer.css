@@ -1,0 +1,32 @@
+/* Ensure the entire page uses Flexbox to center content */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .App {
+    flex: 1; /* Allow the main content area to grow and take up available space */
+  }
+  
+  .Footer {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #282c34; /* Footer background color */
+    color: white; /* Text color */
+    padding: 20px; /* Padding inside the footer */
+    border-top: 2px solid #87CEEB; /* Optional: Add a border to match your theme */
+  }
+  
+  /* Optionally, adjust text alignment for the footer content */
+  .Footer p {
+    margin: 0; /* Remove default margin */
+  }
+  

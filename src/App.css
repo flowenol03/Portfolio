@@ -1,0 +1,91 @@
+/* Header styles */
+.App-header {
+  background-color: #282c34;
+  min-height: 80px; /* Example height for the header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  position: fixed; /* Fix the header to the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure header stays on top */
+}
+
+/* Adjust content positioning below header */
+.App-content {
+  margin-top: 0px; /* Increased space for the fixed header + extra margin for visibility */
+  padding: 20px;
+}
+
+/* Smooth scrolling offset for sections */
+html {
+  scroll-padding-top: 120px; /* Same as header height */
+}
+
+/* General box style for sections */
+.App-section {
+  border: 2px solid #87CEEB; /* Sky blue border */
+  padding: 20px; /* Space inside the border */
+  margin: 20px auto; /* Center the box horizontally */
+  border-radius: 12px; /* Rounded corners */
+  background-color: #000; /* Background color */
+  color: #fff; /* Text color */
+  box-shadow: 0 12px 24px rgba(135, 206, 235, 0.9); /* Larger, more prominent sky blue shadow */
+  width: 80%; /* Box width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  text-align: center; /* Center align text */
+}
+
+/* Specific section headers */
+.App-section h2 {
+  color: #87CEEB; /* Sky blue color for the header */
+}
+
+.App-section p {
+  line-height: 1.6; /* Line height for readability */
+}
+
+.App-section ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+.App-section li {
+  margin: 10px 0; /* Space between list items */
+}
+
+.App-section a {
+  text-decoration: none; /* Removes underline */
+  color: #0ff; /* Set text color to neon cyan */
+  font-weight: bold; /* Make the text bold */
+  position: relative; /* For positioning the pseudo-element */
+}
+
+.App-section a:hover,
+.App-section a:focus {
+  text-decoration: none; /* Ensure no underline on hover/focus */
+  color: #ff4f92; /* Change color on hover */
+  text-shadow: 0 0 20px #0ff, 0 0 30px #0ff; /* Neon glow effect */
+}
+
+.App-section a::before {
+  content: ''; /* Empty content for the line effect */
+  position: absolute; /* Absolute positioning */
+  left: 0; /* Start from the left */
+  bottom: 0; /* Position at the bottom of the link */
+  width: 100%; /* Full width of the link */
+  height: 2px; /* Line height */
+  background-color: #87CEEB; /* Sky blue color for the line */
+  transform: scaleX(0); /* Start with no width */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.App-section a:hover::before,
+.App-section a:focus::before {
+  transform: scaleX(1); /* Scale the line to full width on hover/focus */
+}
