@@ -51,7 +51,6 @@
   margin: 0;
   display: flex; /* Ensure horizontal layout */
   justify-content: space-between; /* Distribute items evenly */
-  font-weight: bold; /* Make the entire ul list bold */
 }
 
 .Header nav ul li {
@@ -65,7 +64,6 @@
   text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
   position: relative;
   display: inline-block;
-  font-weight: bold; /* Make the font of the navigation items bold */
 }
 
 .Header nav ul li a:hover::before {
