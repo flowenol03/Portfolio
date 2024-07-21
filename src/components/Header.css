@@ -123,9 +123,16 @@
   .Header nav ul {
     flex-direction: row; /* Keep list items on the same line */
     width: 100%; /* Take up full width of container */
+    flex-wrap: nowrap; /* Prevent wrapping to new line */
+    overflow-x: auto; /* Add horizontal scrollbar if needed */
   }
+
   .Header nav ul li {
     margin: 0 5px; /* Reduce margin to fit on smaller screens */
     font-size: 1rem; /* Reduce font size to fit on smaller screens */
+  }
+
+  .Header nav ul li a {
+    white-space: nowrap; /* Prevent text wrapping */
   }
 }
