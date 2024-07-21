@@ -84,7 +84,6 @@
 
   .Header nav ul li {
     margin: 0 10px;
-    display: flex;
   }
 
   .Header nav ul li a {
