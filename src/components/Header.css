@@ -50,6 +50,8 @@
   padding: 0;
   margin: 0;
   display: flex; /* Ensure horizontal layout */
+  flex-wrap: wrap; /* Allow items to wrap to next line on smaller screens */
+  justify-content: space-between; /* Distribute items evenly */
 }
 
 .Header nav ul li {
