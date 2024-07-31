@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css'; // Import your global styles
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -9,10 +9,17 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
+  const [activeNav, setActiveNav] = useState('');
+
+  const handleNavClick = (section) => {
+    setActiveNav(section);
+    // Logic to scroll to section or update route can be added here
+  };
+
   return (
     <div className="App">
-      <Header />
-      <Hero />
+      <Header onNavClick={handleNavClick} activeNav={activeNav} />
+      <Hero activeNav={activeNav} />
       <About />
       <Projects />
       <Hobbies />

@@ -1,25 +1,16 @@
 .Header {
   position: sticky;
   top: 0;
-  background: #282c34;
+  background: #000000; /* Header background color */
   padding: 15px;
   text-align: center;
-  border-bottom: 3px solid #0ff;
-  transition: background 0.5s ease;
+  transition: background 0.3s ease; /* Shorter transition duration */
   z-index: 1000;
   display: flex; /* Use flexbox for layout */
   flex-direction: row; /* Align items horizontally */
   align-items: center; /* Center items vertically */
   gap: 10px; /* Space between logo and navigation */
-  height: 100px;
-}
-
-.Header .Logo {
-  height: 120px; /* Increase height to make the logo bigger */
-  width: auto; /* Maintain aspect ratio */
-  position: absolute; /* Remove from normal document flow */
-  left: 15px; /* Align logo to the left with some padding */
-  top: 15px; /* Align logo to the top with some padding */
+  height: 50px;
 }
 
 .Header nav {
@@ -41,110 +32,112 @@
 .Header nav ul li {
   margin: 0; /* Remove margin */
   position: relative; /* Allow positioning of the hover effect */
+  padding: 10px;
+  background: #000; /* Black background for navigation items */
+  border-radius: 10px; /* Rounded corners for navigation items */
+  overflow: hidden;
+  color: #fff; /* Text color */
+  transition: box-shadow 0.3s ease; /* Simplified transition */
+  will-change: box-shadow, transform; /* Hint to browser */
+}
+
+.Header nav ul li::before {
+  content: ''; /* Required for pseudo-element */
+  position: absolute;
+  top: -2px; /* Offset to create the border effect */
+  left: -2px; /* Offset to create the border effect */
+  width: calc(100% + 4px); /* Full width with added offset */
+  height: calc(100% + 4px); /* Full height with added offset */
+  border-radius: 10px; /* Match border radius */
+  background: linear-gradient(45deg, cyan, purple); /* Gradient background */
+  z-index: -1; /* Position behind the content */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  opacity: 0; /* Initially hidden */
+}
+
+.Header nav ul li:hover::before,
+.Header nav ul li.selected::before {
+  opacity: 1; /* Show the gradient border on hover and active */
+}
+
+.Header nav ul li:hover,
+.Header nav ul li.selected {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow for hover effect */
+  /* Removed the animation */
 }
 
 .Header nav ul li a {
-  color: #0ff;
-  text-decoration: none;
-  font-size: 1.75rem;
-  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  color: rgb(255, 255, 255); /* Text color */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 1.4rem; /* Font size */
   position: relative;
   display: inline-block;
   font-weight: bold; /* Make the font of the navigation items bold */
-  transition: text-shadow 0.3s ease; /* Smooth transition for hover effect */
-}
-
-
-.Header nav ul li a:hover::before {
-  width: 100%; /* Extend the line to the full width of the text on hover */
-  height: auto;
-}
-
-.Header nav ul li a:hover {
-  text-shadow: 0 0 40px #0ff, 0 0 30px #0ff;
 }
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
   .Header {
-    padding: 20px;
-  }
-
-  .Header .Logo {
-    height: 70px; /* Adjust height for medium screens */
-    left: 10px; /* Adjust logo position */
-    top: 10px; /* Adjust logo position */
+      padding: 20px;
   }
 
   .Header nav {
-    width: calc(100% - 80px); /* Adjust width to account for logo and padding */
+      width: calc(100% - 80px); /* Adjust width to account for padding */
   }
 
   .Header nav ul {
-    gap: 15px; /* Adjust space between navigation items */
+      gap: 15px; /* Adjust space between navigation items */
   }
 
   .Header nav ul li a {
-    font-size: 1.5rem; /* Adjust font size for medium screens */
+      font-size: 1.5rem; /* Adjust font size for medium screens */
   }
 }
 
 @media (max-width: 768px) {
   .Header {
-    padding: 10px;
-  }
-
-  .Header .Logo {
-    height: 60px; /* Adjust height for small screens */
-    left: 5px; /* Adjust logo position */
-    top: 5px; /* Adjust logo position */
+      padding: 10px;
   }
 
   .Header nav {
-    width: calc(100% - 70px); /* Adjust width to account for logo and padding */
+      width: calc(100% - 70px); /* Adjust width to account for padding */
   }
 
   .Header nav ul {
-    gap: 10px; /* Adjust space between navigation items */
+      gap: 10px; /* Adjust space between navigation items */
   }
 
   .Header nav ul li a {
-    font-size: 1.25rem; /* Adjust font size for small screens */
+      font-size: 1.25rem; /* Adjust font size for small screens */
   }
 }
 
 @media (max-width: 480px) {
   .Header {
-    padding: 5px;
-    height: auto; /* Allow header to grow with content */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-  }
-
-  .Header .Logo {
-    height: 50px; /* Adjust height for extra small screens */
-    position: static; /* Reset positioning */
-    margin-bottom: 10px; /* Add space below logo */
+      padding: 5px;
+      height: auto; /* Allow header to grow with content */
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
   }
 
   .Header nav {
-    width: 100%; /* Take full width of container */
-    justify-content: center; /* Center navigation items */
+      width: 100%; /* Take full width of container */
+      justify-content: center; /* Center navigation items */
   }
 
   .Header nav ul {
-    flex-direction: row; /* Keep list items on the same line */
-    flex-wrap: nowrap; /* Prevent wrapping to new line */
-    overflow-x: auto; /* Add horizontal scrollbar if needed */
-    gap: 10px; /* Increase gap between navigation items */
+      flex-direction: row; /* Keep list items on the same line */
+      flex-wrap: nowrap; /* Prevent wrapping to new line */
+      overflow-x: auto; /* Add horizontal scrollbar if needed */
+      gap: 10px; /* Increase gap between navigation items */
   }
 
   .Header nav ul li {
-    margin: 0; /* Remove margin */
+      margin: 0; /* Remove margin */
   }
 
   .Header nav ul li a {
-    font-size: 1rem; /* Adjust font size for extra small screens */
-    white-space: nowrap; /* Prevent text wrapping */
+      font-size: 1rem; /* Adjust font size for extra small screens */
+      white-space: nowrap; /* Prevent text wrapping */
   }
 }

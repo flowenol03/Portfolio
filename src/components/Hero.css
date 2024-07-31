@@ -1,17 +1,52 @@
+/* Hero.css */
+
 .Hero {
-    border: 2px solid #87CEEB; /* Sky blue border */
-    padding: 20px; /* Space inside the border */
-    margin: 20px auto; /* Center the box horizontally */
-    border-radius: 12px; /* Slightly larger rounded corners */
-    background-color: #000; /* Background color */
-    color: #fff; /* Text color */
-    box-shadow: 0 100px 200px rgba(135, 206, 235, 0.9); /* Larger, more prominent sky blue shadow */
-    width: 80%; /* Box width */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    text-align: center; /* Center align text */
-  }
-  
-  .Hero p {
-    line-height: 1.6; /* Line height for readability */
-  }
-  
+  border: 2px solid #87CEEB; 
+  padding: 20px; /* Space inside the border */
+  margin: 20px auto; /* Center the box horizontally */
+  border-radius: 12px; /* Slightly larger rounded corners */
+  background-color: #000; /* Background color */
+  color: #fff; /* Text color */
+  box-shadow: 0 100px 200px rgba(135, 206, 235, 0.9); /* Larger, more prominent sky blue shadow */
+  width: 80%; /* Box width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  text-align: center; /* Center align text */
+}
+
+.Hero h2 {
+  color: #ffffff; /* Text color for h2 */
+  background-color: #000; /* Black background for the box around h2 */
+  padding: 10px 20px; /* Padding inside the box */
+  border-radius: 12px; /* Match border radius of the .Hero section */
+  position: relative; /* Needed for pseudo-element positioning */
+  display: inline-block; /* Fit background around text */
+  overflow: hidden; /* Ensure pseudo-element does not overflow */
+  z-index: 1; /* Ensure it is above the pseudo-element */
+}
+
+.Hero h2::before {
+  content: ''; /* Required for pseudo-element */
+  position: absolute;
+  top: -4px; /* Offset to create the border effect */
+  left: -4px; /* Offset to create the border effect */
+  width: calc(100% + 8px); /* Full width with added offset */
+  height: calc(100% + 8px); /* Full height with added offset */
+  border-radius: 12px; /* Match border radius */
+  background: linear-gradient(45deg, cyan, purple); /* Gradient background */
+  z-index: -1; /* Position behind the content */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  opacity: 0; /* Initially hidden */
+}
+
+.Hero h2:hover::before {
+  opacity: 1; /* Show the gradient border on hover */
+}
+
+.Hero h1 {
+  color: #ffffff; /* Text color for h1 */
+  text-shadow: 0.3px 0.3px 0.5px rgba(0, 0, 0, 0.2); /* Even subtler shadow */
+}
+
+.Hero p {
+  line-height: 1.6; /* Line height for readability */
+}
