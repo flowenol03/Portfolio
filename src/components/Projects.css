@@ -1,22 +1,41 @@
-.Projects {
-    border: 2px solid #87CEEB; /* Sky blue border */
-    padding: 20px; /* Space inside the border */
-    margin: 20px auto; /* Center the box horizontally */
-    border-radius: 12px; /* Rounded corners */
-    background-color: #000; /* Background color */
-    color: #fff; /* Text color */
-    box-shadow: 0 100px 200px rgba(135, 206, 235, 0.9); /* Larger, more prominent sky blue shadow */
-    width: 80%; /* Box width */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    text-align: center; /* Center align text */
-  }
-  
-  .Projects .project {
-    margin: 20px 0; /* Space between projects */
-  }
-  
+/* Projects.css */
 
-  .Projects p {
-    line-height: 1.6; /* Line height for readability */
-  }
-  
+.Projects {
+  border: 2px solid #87CEEB; /* Sky blue border */
+  padding: 20px; /* Space inside the border */
+  margin: 20px auto; /* Center the box horizontally */
+  border-radius: 12px; /* Rounded corners */
+  background: linear-gradient(45deg, cyan, purple); /* Gradient background */
+  color: #fff; /* Text color */
+  box-shadow: 0 100px 200px rgba(135, 206, 235, 0.9); /* Larger, more prominent sky blue shadow */
+  width: 80%; /* Box width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  text-align: center; /* Center align text */
+}
+
+.Projects h2 {
+  color: #ffffff; /* Text color for h2 */
+  background: linear-gradient(45deg, cyan, purple); /* Gradient background for h2 */
+  padding: 10px 20px; /* Padding inside the box */
+  border-radius: 12px; /* Match border radius of the .Projects section */
+  position: relative; /* Needed for pseudo-element positioning */
+  display: inline-block; /* Fit background around text */
+  overflow: hidden; /* Ensure pseudo-element does not overflow */
+  z-index: 1; /* Ensure it is above the pseudo-element */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Darker shadow for h2 */
+}
+
+.Projects h1 {
+  color: #ffffff; /* Text color for h1 */
+  text-shadow: 0.3px 0.3px 0.5px rgba(0, 0, 0, 0.2); /* Subtle shadow for h1 */
+}
+
+.Projects p {
+  line-height: 1.6; /* Line height for readability */
+}
+.project{
+  background-color: transparent;
+}
+.project h3{
+  color: #ffffff;
+}

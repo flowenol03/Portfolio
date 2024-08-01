@@ -1,59 +1,67 @@
-.Contact {
-    border: 2px solid #87CEEB; /* Sky blue border */
-    padding: 20px; /* Space inside the border */
-    margin: 20px auto; /* Center the box horizontally */
-    border-radius: 12px; /* Rounded corners */
-    background-color: #000; /* Background color */
-    color: #fff; /* Text color */
-    box-shadow: 0 100px 200px rgba(135, 206, 235, 0.9); /* Larger, more prominent sky blue shadow */
-    width: 80%; /* Box width */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    text-align: center; /* Center align text */
-  }
-  
-  .Contact h2 {
-    margin-bottom: 15px; /* Space below the header */
-  }
-  
-  .Contact p {
-    margin-bottom: 20px; /* Space below paragraphs */
-    line-height: 1.6; /* Line height for readability */
-  }
-  
-  .Contact ul {
-    list-style-type: none; /* Removes bullet points */
-    padding: 0; /* Removes default padding */
-    margin: 0; /* Removes default margin */
-  }
-  
-  .Contact li {
-    margin: 10px 0; /* Space between list items */
-  }
-  
-  .Contact a {
-    text-decoration: none; /* Removes underline */
-    font-weight: bold; /* Make the text bold */
-    position: relative; /* For positioning the pseudo-element */
-    color: #00FFFF; /* Neon cyan color */
-  text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF, 0 0 20px #00FFFF;
-  }
-  
+/* Contact.css */
 
-  
-  .Contact a::before {
-    content: ''; /* Empty content for the line effect */
-    position: absolute; /* Absolute positioning */
-    left: 0; /* Start from the left */
-    bottom: 0; /* Position at the bottom of the link */
-    width: 100%; /* Full width of the link */
-    height: 2px; /* Line height */
-    background-color: #87CEEB; /* Sky blue color for the line */
-    transform: scaleX(0); /* Start with no width */
-    transition: transform 0.3s ease; /* Smooth transition */
-  }
-  
-  .Contact a:hover::before,
-  .Contact a:focus::before {
-    transform: scaleX(1); /* Scale the line to full width on hover/focus */
-  }
-  
+.Contact {
+  border: 2px solid #87CEEB; /* Sky blue border */
+  padding: 20px; /* Space inside the border */
+  margin: 20px auto; /* Center the box horizontally */
+  border-radius: 12px; /* Rounded corners */
+  background: linear-gradient(45deg, cyan, purple); /* Gradient background */
+  color: #fff; /* Text color */
+  box-shadow: 0 100px 200px rgba(135, 206, 235, 0.9); /* Larger, more prominent sky blue shadow */
+  width: 80%; /* Box width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  text-align: center; /* Center align text */
+}
+
+.Contact h2 {
+  color: #ffffff; /* Text color for h2 */
+  background: linear-gradient(45deg, cyan, purple); /* Gradient background for h2 */
+  padding: 10px 20px; /* Padding inside the box */
+  border-radius: 12px; /* Match border radius of the .Contact section */
+  position: relative; /* Needed for pseudo-element positioning */
+  display: inline-block; /* Fit background around text */
+  overflow: hidden; /* Ensure pseudo-element does not overflow */
+  z-index: 1; /* Ensure it is above the pseudo-element */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Darker shadow for h2 */
+  margin-bottom: 15px; /* Space below the header */
+}
+
+.Contact p {
+  margin-bottom: 20px; /* Space below paragraphs */
+  line-height: 1.6; /* Line height for readability */
+}
+
+.Contact ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+.Contact li {
+  margin: 10px 0; /* Space between list items */
+}
+
+.Contact a {
+  text-decoration: none; /* Removes underline */
+  font-weight: bold; /* Make the text bold */
+  position: relative; /* For positioning the pseudo-element */
+  color: #ffffff; /* Neon cyan color */
+  text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF, 0 0 20px #00FFFF; /* Neon text shadow */
+}
+
+.Contact a::before {
+  content: ''; /* Empty content for the line effect */
+  position: absolute; /* Absolute positioning */
+  left: 0; /* Start from the left */
+  bottom: 0; /* Position at the bottom of the link */
+  width: 100%; /* Full width of the link */
+  height: 2px; /* Line height */
+  background-color: #87CEEB; /* Sky blue color for the line */
+  transform: scaleX(0); /* Start with no width */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.Contact a:hover::before,
+.Contact a:focus::before {
+  transform: scaleX(1); /* Scale the line to full width on hover/focus */
+}
