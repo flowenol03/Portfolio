@@ -1,12 +1,13 @@
+/* Base Styles */
 .About {
   border: 2px solid #87CEEB; /* Sky blue border */
-  padding: 20px; /* Space inside the border */
-  margin: 20px auto; /* Center the box horizontally */
-  border-radius: 12px; /* Slightly larger rounded corners */
+  padding: 10px; /* Space inside the border */
+  margin: 10px auto; /* Center the box horizontally */
+  border-radius: 8px; /* Slightly rounded corners */
   background: linear-gradient(45deg, cyan, purple); 
   color: #fff; /* White text color */
-  box-shadow: 0 100px 200px rgba(135, 206, 235, 0.9); /* Sky blue shadow */
-  width: 80%; /* Box width */
+  box-shadow: 0 60px 120px rgba(135, 206, 235, 0.8); /* Increased shadow */
+  width: 90%; /* Box width */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   text-align: center; /* Center align text */
   overflow: hidden; /* Ensure overflow is hidden */
@@ -25,13 +26,13 @@
 .About-content {
   display: flex; /* Use flexbox for layout */
   gap: 20px; /* Space between boxes */
-  padding: 20px 0; /* Padding to prevent content touching the edges */
-  position: relative; /* Ensure z-index works correctly */
+  padding: 10px 0; /* Padding to prevent content touching the edges */
+  flex-direction: row; /* Ensure content is displayed horizontally */
   overflow-x: auto; /* Allow horizontal scrolling */
   scroll-behavior: smooth; /* Smooth scroll behavior */
-  flex-grow: 1; /* Allow content to grow */
   background-color: transparent; /* Background color of the red box */
   z-index: 1; /* Lower z-index to ensure boxes appear above */
+  box-shadow: 0 40px 80px rgba(135, 206, 235, 0.7); /* Increased shadow */
 }
 
 .About-content::-webkit-scrollbar {
@@ -47,7 +48,7 @@
   background: linear-gradient(45deg, cyan, purple); /* Gradient background for h2 */
   -webkit-background-clip: text; /* Clip the background to text */
   color: #ffffff; /* Make the text color transparent to show gradient */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Darker shadow for h2 */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7); /* Darker shadow for h2 */
 }
 
 .About h2::before {
@@ -72,11 +73,10 @@
   background: linear-gradient(45deg, cyan, purple); /* Gradient background */
   padding: 20px; /* Padding inside the box */
   border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for the box */
-  width: 350px; /* Width for each box */
-  height: 400px; /* Height for each box */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Increased shadow */
+  width: 300px; /* Default width for smaller screens */
+  height: 350px; /* Default height for smaller screens */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  transition: transform 0.3s ease, z-index 0.3s ease; /* Smooth transition for scaling and z-index */
   cursor: pointer; /* Indicate that the box is clickable */
   flex-shrink: 0; /* Prevent the box from shrinking */
   display: flex; /* Use flexbox for inner content layout */
@@ -88,22 +88,14 @@
   z-index: 2; /* Default z-index for the box */
 }
 
-/* Ensure proper stacking and hover effect */
+/* Remove hover effect */
 .About-box:hover,
 .About-box.active {
-  z-index: 1000; /* Set a very high z-index value to ensure it is on top */
+  z-index: 2; /* Default z-index without hover effect */
+  transform: none; /* No scaling on hover or active state */
 }
 
-.About-box.active {
-  transform: scale(1.2); /* Scale up the box on active state */
-}
-
-/* Adjust hover effect for the first box */
-.About-box:first-child:hover,
-.About-box:first-child.active {
-  z-index: 1000; /* Ensure the first box is on top when active or hovered */
-}
-
+/* Navigation Arrows */
 .nav-arrow {
   background: none; /* Remove default background */
   border: none; /* Remove default border */
@@ -115,6 +107,66 @@
   display: none; /* Hide the arrows */
 }
 
-.nav-arrow:focus {
-  outline: none; /* Remove focus outline */
+/* Responsive Styles */
+
+/* Mobile Styles (default) */
+@media (max-width: 599px) {
+  .About {
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 60px 120px rgba(135, 206, 235, 0.8); /* Increased shadow */
+    width: 90%;
+  }
+
+  .About-content {
+    gap: 10px;
+    padding: 10px 0;
+    flex-direction: row; /* Ensure horizontal layout */
+  }
+
+  .About-box {
+    width: 100%; /* Full width for smaller screens */
+    height: auto; /* Auto height for smaller screens */
+  }
+}
+
+/* Tablets and Larger Screens */
+@media (min-width: 600px) {
+  .About {
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 60px 120px rgba(135, 206, 235, 0.8); /* Increased shadow */
+    width: 80%;
+  }
+
+  .About-content {
+    gap: 20px;
+    padding: 20px 0;
+    flex-direction: row; /* Ensure horizontal layout */
+  }
+
+  .About-box {
+    width: 300px; /* Adjust width for tablets and larger screens */
+    height: 350px; /* Adjust height for tablets and larger screens */
+  }
+}
+
+/* Desktops and Larger Screens */
+@media (min-width: 992px) {
+  .About {
+    width: 80%;
+  }
+
+  .About-content {
+    gap: 20px;
+    padding: 20px 0;
+    flex-direction: row; /* Ensure horizontal layout */
+  }
+
+  .About-box {
+    width: 350px; /* Default width for larger screens */
+    height: 400px; /* Default height for larger screens */
+  }
 }
