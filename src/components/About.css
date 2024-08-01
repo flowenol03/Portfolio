@@ -3,34 +3,118 @@
   padding: 20px; /* Space inside the border */
   margin: 20px auto; /* Center the box horizontally */
   border-radius: 12px; /* Slightly larger rounded corners */
-  background: linear-gradient(45deg, cyan, purple); /* Gradient background */
+  background: linear-gradient(45deg, cyan, purple); 
   color: #fff; /* White text color */
   box-shadow: 0 100px 200px rgba(135, 206, 235, 0.9); /* Sky blue shadow */
   width: 80%; /* Box width */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   text-align: center; /* Center align text */
+  overflow: hidden; /* Ensure overflow is hidden */
+  position: relative; /* Ensure positioning context for z-index */
+}
+
+.About-content-wrapper {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center align items vertically */
+  overflow: hidden; /* Ensure overflow is hidden */
+  background-color: transparent; /* No background gradient here to avoid stacking issues */
+  position: relative; /* Ensure stacking context is correct */
+  z-index: 1; /* Lower z-index to ensure boxes appear above */
 }
 
 .About-content {
-  background: transparent; /* Make sure the content area does not override the section background */
-  padding: 10px; /* Padding inside the content box */
-  border-radius: 12px; /* Match border radius */
-  display: inline-block; /* Shrink to fit content */
+  display: flex; /* Use flexbox for layout */
+  gap: 20px; /* Space between boxes */
+  padding: 20px 0; /* Padding to prevent content touching the edges */
+  position: relative; /* Ensure z-index works correctly */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scroll behavior */
+  flex-grow: 1; /* Allow content to grow */
+  background-color: transparent; /* Background color of the red box */
+  z-index: 1; /* Lower z-index to ensure boxes appear above */
+}
+
+.About-content::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar in Webkit browsers */
 }
 
 .About h2 {
-  color: #ffffff; /* White text color */
   margin: 0; /* Remove default margin */
   padding: 10px 20px; /* Padding for the box around h2 */
   border-radius: 12px; /* Match border radius */
   position: relative; /* Position relative for pseudo-element */
   display: inline-block; /* Fit background around text */
-  overflow: hidden; /* Ensure pseudo-element does not overflow */
-  transition: color 0.3s ease; /* Smooth transition for text color */
   background: linear-gradient(45deg, cyan, purple); /* Gradient background for h2 */
+  -webkit-background-clip: text; /* Clip the background to text */
+  color: #ffffff; /* Make the text color transparent to show gradient */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Darker shadow for h2 */
 }
 
-.About h3{
-  color: #ffffff;
+.About h2::before {
+  content: ''; /* Empty content for pseudo-element */
+  position: absolute; /* Absolute positioning for stacking */
+  top: 0; /* Align with top of h2 */
+  left: 0; /* Align with left of h2 */
+  width: 100%; /* Full width of h2 */
+  height: 100%; /* Full height of h2 */
+  background: linear-gradient(45deg, cyan, purple); /* Gradient background for h2 */
+  z-index: -1; /* Place behind text */
+}
+
+.About h3 {
+  color: #ffffff; /* White text color */
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Center the title text */
+  width: 100%; /* Ensure h3 takes full width */
+}
+
+.About-box {
+  background: linear-gradient(45deg, cyan, purple); /* Gradient background */
+  padding: 20px; /* Padding inside the box */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for the box */
+  width: 350px; /* Width for each box */
+  height: 400px; /* Height for each box */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  transition: transform 0.3s ease, z-index 0.3s ease; /* Smooth transition for scaling and z-index */
+  cursor: pointer; /* Indicate that the box is clickable */
+  flex-shrink: 0; /* Prevent the box from shrinking */
+  display: flex; /* Use flexbox for inner content layout */
+  flex-direction: column; /* Stack inner elements vertically */
+  align-items: flex-start; /* Align items to the start horizontally */
+  justify-content: flex-start; /* Align items to the start vertically */
+  position: relative; /* Ensure z-index works correctly */
+  text-align: left; /* Align text to the start */
+  z-index: 2; /* Default z-index for the box */
+}
+
+/* Ensure proper stacking and hover effect */
+.About-box:hover,
+.About-box.active {
+  z-index: 1000; /* Set a very high z-index value to ensure it is on top */
+}
+
+.About-box.active {
+  transform: scale(1.2); /* Scale up the box on active state */
+}
+
+/* Adjust hover effect for the first box */
+.About-box:first-child:hover,
+.About-box:first-child.active {
+  z-index: 1000; /* Ensure the first box is on top when active or hovered */
+}
+
+.nav-arrow {
+  background: none; /* Remove default background */
+  border: none; /* Remove default border */
+  color: #fff; /* White text color */
+  font-size: 2rem; /* Large font size */
+  cursor: pointer; /* Pointer cursor */
+  padding: 0 20px; /* Padding around the arrow */
+  user-select: none; /* Prevent text selection */
+  display: none; /* Hide the arrows */
+}
+
+.nav-arrow:focus {
+  outline: none; /* Remove focus outline */
 }
