@@ -13,6 +13,32 @@
   overflow: hidden; /* Ensure overflow is hidden */
   position: relative; /* Ensure positioning context for z-index */
 }
+.About-box {
+  background: linear-gradient(45deg, cyan, purple); /* Gradient background */
+  padding: 20px; /* Padding inside the box */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  width: 300px; /* Default width */
+  height: 350px; /* Default height */
+  box-sizing: border-box; /* Include padding and border in the width and height */
+  cursor: pointer; /* Indicate that the box is clickable */
+  flex-shrink: 0; /* Prevent the box from shrinking */
+  display: flex; /* Flexbox for inner content layout */
+  flex-direction: column; /* Stack inner elements vertically */
+  align-items: flex-start; /* Align items to the start horizontally */
+  justify-content: flex-start; /* Align items to the start vertically */
+  position: relative; /* Ensure z-index works correctly */
+  text-align: left; /* Align text to the start */
+  z-index: 2; /* Default z-index for the box */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+}
+
+/* Hover effect */
+.About-box.active {
+  z-index: 3; /* Higher z-index on active state */
+  box-shadow: 0 60px 120px rgba(135, 206, 235, 0.8); /* Enhanced shadow effect */
+  transform: scale(1.08); /* Slightly enlarge the box */
+}
 
 .About-content-wrapper {
   display: flex; /* Use flexbox for layout */
@@ -21,6 +47,7 @@
   background-color: transparent; /* No background gradient here to avoid stacking issues */
   position: relative; /* Ensure stacking context is correct */
   z-index: 1; /* Lower z-index to ensure boxes appear above */
+  padding: 0 50px; /* Add padding to prevent overlap with arrows */
 }
 
 .About-content {
@@ -37,6 +64,10 @@
 
 .About-content::-webkit-scrollbar {
   display: none; /* Hide the scrollbar in Webkit browsers */
+}
+
+.About-content .About-box:first-child {
+  margin-left: 20px; /* Move the first box to the right */
 }
 
 .About h2 {
@@ -88,23 +119,34 @@
   z-index: 2; /* Default z-index for the box */
 }
 
-/* Remove hover effect */
-.About-box:hover,
-.About-box.active {
-  z-index: 2; /* Default z-index without hover effect */
-  transform: none; /* No scaling on hover or active state */
+/* Hover effect */
+.About-box.hovered {
+  z-index: 3; /* Higher z-index on hover */
+  box-shadow: 0 60px 120px rgba(135, 206, 235, 0.8); /* Box shadow effect */
+  transform: scale(1.05); /* Slightly enlarge the box */
 }
 
 /* Navigation Arrows */
 .nav-arrow {
-  background: none; /* Remove default background */
+  background: transparent; /* Transparent background */
   border: none; /* Remove default border */
   color: #fff; /* White text color */
   font-size: 2rem; /* Large font size */
   cursor: pointer; /* Pointer cursor */
   padding: 0 20px; /* Padding around the arrow */
   user-select: none; /* Prevent text selection */
-  display: none; /* Hide the arrows */
+  position: absolute; /* Absolute positioning */
+  top: 50%; /* Vertically center */
+  transform: translateY(-50%); /* Adjust for perfect centering */
+  z-index: 5; /* Ensure arrows are above other content */
+}
+
+.nav-arrow.left {
+  left: 0; /* Position to the left */
+}
+
+.nav-arrow.right {
+  right: 0; /* Position to the right */
 }
 
 /* Responsive Styles */
@@ -117,6 +159,10 @@
     border-radius: 8px;
     box-shadow: 0 60px 120px rgba(135, 206, 235, 0.8); /* Increased shadow */
     width: 90%;
+  }
+
+  .About-content-wrapper {
+    padding: 0 30px; /* Add padding to prevent overlap with arrows */
   }
 
   .About-content {
@@ -141,6 +187,10 @@
     width: 80%;
   }
 
+  .About-content-wrapper {
+    padding: 0 50px; /* Add padding to prevent overlap with arrows */
+  }
+
   .About-content {
     gap: 20px;
     padding: 20px 0;
@@ -157,6 +207,10 @@
 @media (min-width: 992px) {
   .About {
     width: 80%;
+  }
+
+  .About-content-wrapper {
+    padding: 0 50px; /* Add padding to prevent overlap with arrows */
   }
 
   .About-content {

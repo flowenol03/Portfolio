@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './About.css'; // Add your styles here
 
 function About() {
-  const [activeIndex, setActiveIndex] = useState(null); // Initially no box is active
+  const [activeIndex, setActiveIndex] = useState(null); // No box initially active
   const contentRef = useRef(null);
 
   const boxes = [
@@ -46,7 +46,7 @@ function About() {
   };
 
   const handleBoxClick = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index)); // Toggle active state
+    setActiveIndex(index); // Set active index to the clicked box
   };
 
   return (
@@ -63,7 +63,7 @@ function About() {
         <div className="About-content" ref={contentRef}>
           {boxes.map((box, index) => (
             <div
-              key={index} // Using index for unique key, ensure uniqueness if possible
+              key={index}
               className={`About-box ${index === activeIndex ? 'active' : ''}`}
               onClick={() => handleBoxClick(index)}
             >
