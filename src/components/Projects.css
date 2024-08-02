@@ -32,6 +32,13 @@
   justify-content: center; /* Center align the project boxes */
   background: transparent;
   position: relative; /* Position relative for arrow positioning */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.project-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
 }
 
 .project {
@@ -88,13 +95,12 @@
   right: 0;
 }
 
-
 @media (max-width: 768px) {
   .Projects {
     width: 90%; /* Adjust width for smaller screens */
   }
 
   .project-container {
-    flex-direction: column; /* Stack projects vertically on small screens */
+    flex-direction: row; /* Ensure projects are in a row on small screens */
   }
 }
