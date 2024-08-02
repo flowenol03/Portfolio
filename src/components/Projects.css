@@ -1,5 +1,3 @@
-/* Projects.css */
-
 .Projects {
   border: 2px solid #87CEEB; /* Sky blue border */
   padding: 20px; /* Space inside the border */
@@ -7,35 +5,96 @@
   border-radius: 12px; /* Rounded corners */
   background: linear-gradient(45deg, cyan, purple); /* Gradient background */
   color: #fff; /* Text color */
-  box-shadow: 0 100px 200px rgba(135, 206, 235, 0.9); /* Larger, more prominent sky blue shadow */
+  box-shadow: 0 60px 120px rgba(135, 206, 235, 0.8); /* Increased shadow */
   width: 80%; /* Box width */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   text-align: center; /* Center align text */
+  position: relative; /* Position relative for arrow positioning */
 }
 
 .Projects h2 {
   color: #ffffff; /* Text color for h2 */
   background: linear-gradient(45deg, cyan, purple); /* Gradient background for h2 */
   padding: 10px 20px; /* Padding inside the box */
-  border-radius: 12px; /* Match border radius of the .Projects section */
+  border-radius: 12px; /* Match border radius */
   position: relative; /* Needed for pseudo-element positioning */
   display: inline-block; /* Fit background around text */
   overflow: hidden; /* Ensure pseudo-element does not overflow */
   z-index: 1; /* Ensure it is above the pseudo-element */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Darker shadow for h2 */
+  margin-bottom: 20px; /* Space below h2 */
 }
 
-.Projects h1 {
-  color: #ffffff; /* Text color for h1 */
-  text-shadow: 0.3px 0.3px 0.5px rgba(0, 0, 0, 0.2); /* Subtle shadow for h1 */
+.project-container {
+  display: flex; /* Enable flexbox */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  gap: 20px; /* Space between project boxes */
+  justify-content: center; /* Center align the project boxes */
+  background: transparent;
+  position: relative; /* Position relative for arrow positioning */
 }
 
-.Projects p {
+.project {
+  background: linear-gradient(45deg, cyan, purple); /* Gradient background for each project */
+  padding: 20px; /* Padding inside the box */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  color: #ffffff; /* White text color */
+  min-width: 250px; /* Minimum width for each box */
+  min-height: 300px; /* Increased minimum height for each box */
+  text-align: center; /* Center align text */
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Align items in a column */
+  justify-content: flex-start; /* Align content to the top */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project.hovered {
+  transform: scale(1.05); /* Slightly enlarge the box */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* Increase shadow effect */
+}
+
+.project h3 {
+  color: #ffffff; /* White text color for project titles */
+  margin: 0 0 10px 0; /* Space below the title */
+  text-align: center; /* Center align text */
+}
+
+.project p {
+  color: #ffffff; /* White text color for project descriptions */
   line-height: 1.6; /* Line height for readability */
+  margin: 0; /* Remove default margin */
+  margin-top: 30px;
 }
-.project{
-  background-color: transparent;
-}
-.project h3{
+
+.arrow {
+  background: none;
+  border: none;
   color: #ffffff;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 1; /* Ensure arrows are above the projects */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+}
+
+.arrow-left {
+  left: 0;
+}
+
+.arrow-right {
+  right: 0;
+}
+
+
+@media (max-width: 768px) {
+  .Projects {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .project-container {
+    flex-direction: column; /* Stack projects vertically on small screens */
+  }
 }

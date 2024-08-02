@@ -1,6 +1,5 @@
-/* Hero.css */
-
 .Hero {
+  position: relative; /* For positioning the h2 */
   border: 2px solid #87CEEB; 
   padding: 20px; /* Space inside the border */
   margin: 20px auto; /* Center the box horizontally */
@@ -10,26 +9,106 @@
   box-shadow: 0 100px 200px rgba(135, 206, 235, 0.9); /* Larger, more prominent sky blue shadow */
   width: 80%; /* Box width */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  text-align: center; /* Center align text */
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center align items vertically */
+  flex-direction: column; /* Stack children vertically */
 }
 
 .Hero h2 {
+  position: absolute; /* Absolute positioning */
+  top: 10px; /* Adjust top space to fit within the Hero section */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
   color: #ffffff; /* Text color for h2 */
   background: linear-gradient(45deg, cyan, purple);
   padding: 10px 20px; /* Padding inside the box */
   border-radius: 12px; /* Match border radius of the .Hero section */
-  position: relative; /* Needed for pseudo-element positioning */
   display: inline-block; /* Fit background around text */
   overflow: hidden; /* Ensure pseudo-element does not overflow */
   z-index: 1; /* Ensure it is above the pseudo-element */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Darker shadow for h2 */
 }
 
-.Hero h1 {
-  color: #ffffff; /* Text color for h1 */
-  text-shadow: 0.3px 0.3px 0.5px rgba(0, 0, 0, 0.2); /* Even subtler shadow */
+.Hero-content {
+  display: flex; /* Use flexbox for layout */
+  width: 100%; /* Full width */
+  margin-top: 60px; /* Space to make room for centered h2 */
+  align-items: center; /* Center align items vertically */
+  background: transparent; /* Ensure content background is transparent */
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+}
+
+.Hero-photo {
+  flex: 1; /* Flex grow to take available space */
+  display: flex; /* Center image inside container */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: 20px; /* Move the photo up */
+  background: linear-gradient(45deg, cyan, purple); /* Neon cyan and purple background */
+  border-radius: 12px; /* Match border radius of the Hero section */
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  padding: 10px; /* Padding around the image */
+  max-width: 250px; /* Maximum width of the photo box */
+  height: auto; /* Adjust height automatically */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+  cursor: pointer;
+}
+
+.Hero-photo img {
+  max-width: 100%; /* Ensure the image scales with its container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 12px; /* Match border radius of the Hero section */
+  object-fit: cover; /* Cover the container */
+  object-position: top; /* Crop the bottom of the image */
+}
+
+.Hero-photo:hover {
+  transform: scale(1.1); /* Slightly enlarge the photo on hover */
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
+}
+
+.Hero-text {
+  flex: 2; /* Flex grow more compared to photo container */
+  margin-left: 20px; /* Space between photo and text */
+  background: transparent; /* Ensure text background is transparent */
 }
 
 .Hero p {
   line-height: 1.6; /* Line height for readability */
+  background: transparent; /* Ensure paragraph background is transparent */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .Hero-content {
+    flex-direction: column; /* Stack content vertically on smaller screens */
+    align-items: center; /* Center align items */
+  }
+
+  .Hero-photo {
+    margin-top: 10px; /* Reduce top margin */
+    max-width: 200px; /* Reduce photo box width */
+  }
+
+  .Hero-text {
+    margin-left: 0; /* Remove left margin */
+    margin-top: 10px; /* Add top margin */
+  }
+}
+
+@media (max-width: 480px) {
+  .Hero {
+    width: 90%; /* Increase width on very small screens */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .Hero h2 {
+    padding: 5px 10px; /* Reduce padding */
+    font-size: 1.2em; /* Adjust font size */
+  }
+
+  .Hero-photo {
+    max-width: 150px; /* Further reduce photo box width */
+    padding: 5px; /* Reduce padding */
+  }
 }

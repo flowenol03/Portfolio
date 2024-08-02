@@ -10,9 +10,9 @@
   width: 90%; /* Box width */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   text-align: center; /* Center align text */
-  overflow: hidden; /* Ensure overflow is hidden */
   position: relative; /* Ensure positioning context for z-index */
 }
+
 .About-box {
   background: linear-gradient(45deg, cyan, purple); /* Gradient background */
   padding: 20px; /* Padding inside the box */
@@ -100,25 +100,6 @@
   width: 100%; /* Ensure h3 takes full width */
 }
 
-.About-box {
-  background: linear-gradient(45deg, cyan, purple); /* Gradient background */
-  padding: 20px; /* Padding inside the box */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Increased shadow */
-  width: 300px; /* Default width for smaller screens */
-  height: 350px; /* Default height for smaller screens */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  cursor: pointer; /* Indicate that the box is clickable */
-  flex-shrink: 0; /* Prevent the box from shrinking */
-  display: flex; /* Use flexbox for inner content layout */
-  flex-direction: column; /* Stack inner elements vertically */
-  align-items: flex-start; /* Align items to the start horizontally */
-  justify-content: flex-start; /* Align items to the start vertically */
-  position: relative; /* Ensure z-index works correctly */
-  text-align: left; /* Align text to the start */
-  z-index: 2; /* Default z-index for the box */
-}
-
 /* Hover effect */
 .About-box.hovered {
   z-index: 3; /* Higher z-index on hover */
@@ -128,17 +109,16 @@
 
 /* Navigation Arrows */
 .nav-arrow {
-  background: transparent; /* Transparent background */
-  border: none; /* Remove default border */
-  color: #fff; /* White text color */
-  font-size: 2rem; /* Large font size */
-  cursor: pointer; /* Pointer cursor */
-  padding: 0 20px; /* Padding around the arrow */
-  user-select: none; /* Prevent text selection */
-  position: absolute; /* Absolute positioning */
-  top: 50%; /* Vertically center */
-  transform: translateY(-50%); /* Adjust for perfect centering */
-  z-index: 5; /* Ensure arrows are above other content */
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 1; /* Ensure arrows are above the projects */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
 }
 
 .nav-arrow.left {
