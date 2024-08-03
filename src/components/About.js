@@ -53,13 +53,14 @@ function About() {
     <section id="about" className="About">
       <h2>About Me</h2>
       <div className="About-content-wrapper">
-        <button 
-          className="nav-arrow left" 
-          onClick={handlePrevClick}
-          aria-label="Previous"
-        >
-          ←
-        </button>
+      <button 
+  className="arrow arrow-left" 
+  onClick={() => handlePrevClick('left')}
+  aria-label="Previous"
+>
+  {'<'}
+</button>
+
         <div className="About-content" ref={contentRef}>
           {boxes.map((box, index) => (
             <div
@@ -72,13 +73,13 @@ function About() {
             </div>
           ))}
         </div>
-        <button 
-          className="nav-arrow right" 
-          onClick={handleNextClick}
-          aria-label="Next"
-        >
-          →
-        </button>
+      <button 
+  className="arrow arrow-right" 
+  onClick={handleNextClick} 
+  aria-label="Next"
+>
+  {'>'}
+</button>
       </div>
     </section>
   );

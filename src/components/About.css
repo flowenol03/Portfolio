@@ -109,24 +109,32 @@
 
 /* Navigation Arrows */
 .nav-arrow {
-  background: none;
-  border: none;
+  background: rgba(135, 206, 235, 0.8); /* Light blue semi-transparent background */
+  border: 2px solid #ffffff; /* White border */
   color: #ffffff;
-  font-size: 2em;
+  font-size: 1.5em;
   cursor: pointer;
   z-index: 1; /* Ensure arrows are above the projects */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   padding: 10px;
+  border-radius: 50%; /* Circular arrows */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
 }
 
 .nav-arrow.left {
-  left: 0; /* Position to the left */
+  left: 1px; /* Adjusted for better visibility */
 }
 
 .nav-arrow.right {
-  right: 0; /* Position to the right */
+  right: 1px; /* Adjusted for better visibility */
+}
+
+.nav-arrow:hover {
+  background: rgba(135, 206, 235, 1); /* Full light blue background on hover */
+  transform: translateY(-50%) scale(1.1); /* Slightly enlarge the arrow on hover */
 }
 
 /* Responsive Styles */
