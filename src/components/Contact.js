@@ -30,7 +30,7 @@ function Contact() {
           </a>
         </li>
         <li>
-          <a href="https://drive.google.com/file/d/13qxb7EA2AogbJfC9sEY2A3oJCpfrxzTT/view?usp=sharing" download="PrathameshKhandekar.pdf">
+          <a href="https://drive.google.com/file/d/1j4BDbN4YhK92Qdh_bINWIMuUH8ofwlLS/view?usp=sharing" download="PrathameshKhandekar.pdf">
             <i className="fas fa-download"></i> Download CV
           </a>
         </li>
