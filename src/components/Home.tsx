@@ -1,6 +1,8 @@
 import React from 'react';
 import { Code, Brush, Brain, Coffee, ChevronDown } from 'lucide-react';
 
+const profileImg = new URL('../images/IMG_1346.jpg', import.meta.url).href; // ✅ Fix applied
+
 const Home = () => {
   const skills = [
     { name: 'Frontend Development', icon: Code, progress: 90 },
@@ -22,8 +24,7 @@ const Home = () => {
             <div>
               <h2 className="text-lg text-blue-400 font-medium mb-2">Welcome to my portfolio</h2>
               <h1 className="text-5xl md:text-7xl font-bold mb-4">
-                Hi, I'm{' '}
-                <span className="gradient-text">Prathamesh</span>
+                Hi, I'm <span className="gradient-text">Prathamesh</span>
               </h1>
               <p className="text-xl text-gray-300">
                 A passionate developer crafting beautiful and functional web experiences
@@ -32,24 +33,14 @@ const Home = () => {
 
             <div className="space-y-6">
               {skills.map((skill, index) => (
-                <div
-                  key={skill.name}
-                  className="animate-slide-in"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
+                <div key={skill.name} className="animate-slide-in" style={{ animationDelay: `${index * 0.2}s` }}>
                   <div className="flex items-center mb-2">
                     <skill.icon className="w-5 h-5 text-blue-400 mr-2" />
                     <span className="text-gray-200 font-medium">{skill.name}</span>
                     <span className="ml-auto text-blue-400">{skill.progress}%</span>
                   </div>
                   <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
-                    <div
-                      className="h-full rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
-                      style={{
-                        width: `${skill.progress}%`,
-                        transition: 'width 1s ease-in-out',
-                      }}
-                    ></div>
+                    <div className="h-full rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" style={{ width: `${skill.progress}%`, transition: 'width 1s ease-in-out' }}></div>
                   </div>
                 </div>
               ))}
@@ -62,11 +53,7 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
 
               {/* Profile Image */}
-              <img
-                src="../images/IMG_1346.jpg"
-                alt="Profile"
-                className="relative w-full h-full rounded-full object-cover border-4 border-white/20 shadow-2xl"
-              />
+              <img src={profileImg} alt="Profile" className="relative w-full h-full rounded-full object-cover border-4 border-white/20 shadow-2xl" />
 
               {/* Text with Gradient */}
               <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">

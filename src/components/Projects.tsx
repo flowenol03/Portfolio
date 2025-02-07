@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Github, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import project1 from '../images/project1.jpg';
+import project2 from '../images/project2.jpg';
+import project3 from '../images/project3.jpg';
 
 const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -10,26 +13,26 @@ const Projects = () => {
       description: 'A web application built with TypeScript...',
       github: 'https://github.com',
       demo: 'https://swarswarupresort.netlify.app/',
-      image: '../images/project1.jpg',
+      image: project1,  // Imported image
       tech: ['React', 'Node.js', 'TypeScript', 'WebSocket'],
     },
     {
       name: 'AyurMediPro',
-      description: 'A Desktop application built with php...',
+      description: 'A Desktop application built with PHP...',
       github: 'https://github.com',
       demo: 'https://demo.com',
-      image: '../images/project2.jpg',
-      tech: ['Next.js', 'php', 'TypeScript', 'PostgreSQL'],
+      image: project2,  // Imported image
+      tech: ['Next.js', 'PHP', 'TypeScript', 'PostgreSQL'],
     },
     {
       name: 'Project Three',
       description: 'AI-powered data visualization dashboard...',
       github: 'https://github.com',
       demo: 'https://demo.com',
-      image: '../images/project3.jpg',
+      image: project3,  // Imported image
       tech: ['Python', 'TensorFlow', 'D3.js', 'Flask'],
     },
-  ];
+];
 
   const nextProject = () => {
     setActiveIndex((prev) => (prev + 1) % projects.length);
