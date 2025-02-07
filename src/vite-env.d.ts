@@ -10,4 +10,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  assetsInclude: ["**/*.JPG", "**/*.jpg"], // Ensure both uppercase and lowercase extensions are included
 });

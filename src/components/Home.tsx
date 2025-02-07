@@ -1,7 +1,7 @@
 import React from 'react';
 import { Code, Brush, Brain, Coffee, ChevronDown } from 'lucide-react';
 
-const profileImg = new URL('../images/IMG_1346.jpg', import.meta.url).href; // ✅ Fix applied
+const profileImg = new URL('../images/IMG_1346.JPG', import.meta.url).href;
 
 const Home = () => {
   const skills = [
