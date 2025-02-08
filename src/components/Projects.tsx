@@ -3,17 +3,26 @@ import { Github, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import project1 from '../images/project1.jpg';
 import project2 from '../images/project2.jpg';
 import project3 from '../images/project3.jpg';
+import project4 from '../images/project4.jpg';
 
 const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const projects = [
     {
-      name: 'SwarSwarup',
+      name: 'SwarSwarup Resort',
       description: 'A web application built with TypeScript...',
       github: 'https://github.com',
       demo: 'https://swarswarupresort.netlify.app/',
       image: project1,  // Imported image
+      tech: ['React', 'Node.js', 'TypeScript', 'WebSocket'],
+    },
+    {
+      name: 'Apurva Tours & Travels',
+      description: 'A Tours & Travels website built with TypeScript...',
+      github: 'https://github.com',
+      demo: 'https://apurvatours.netlify.app/',
+      image: project4,  // Imported image
       tech: ['React', 'Node.js', 'TypeScript', 'WebSocket'],
     },
     {
@@ -25,8 +34,8 @@ const Projects = () => {
       tech: ['Next.js', 'PHP', 'TypeScript', 'PostgreSQL'],
     },
     {
-      name: 'Project Three',
-      description: 'AI-powered data visualization dashboard...',
+      name: 'Product Recommendation',
+      description: 'E-coomerse product recommendation built with python...',
       github: 'https://github.com',
       demo: 'https://demo.com',
       image: project3,  // Imported image
