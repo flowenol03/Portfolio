@@ -105,7 +105,7 @@ const Home = () => {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               />
 
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-opacity-80 bg-black px-6 py-2 rounded-full backdrop-blur-md">
+              <div className="absolute -bottom-8 sm:-bottom-4 left-1/2 transform -translate-x-1/2 bg-opacity-80 bg-black px-6 py-2 rounded-full backdrop-blur-md">
                 <p className="text-sm font-medium text-blue-400">AI-Driven Web Developer</p>
               </div>
             </div>
