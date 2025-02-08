@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
-// Import images if they are inside the src folder
+// Import images
 import berserkImage from '../images/berserk.jpg';
 import deathNoteImage from '../images/deathnote.jpg';
 import narutoImage from '../images/naruto.jpg';
@@ -62,68 +63,55 @@ const Hobbies = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          My <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Hobbies</span>
-        </h2>
+    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white py-20 flex flex-col items-center">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+        My <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Hobbies</span>
+      </h2>
 
-        <div className="relative flex items-center justify-center">
-          {/* Left Arrow */}
-          <button
-            onClick={prevAnime}
-            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-gray-800/50 rounded-full backdrop-blur-md hover:bg-gray-700 transition-all"
-          >
-            <ChevronLeft className="w-6 h-6 text-white" />
-          </button>
+      <div className="relative flex items-center justify-center w-full max-w-4xl">
+        <motion.button
+          onClick={prevAnime}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-gray-800/60 rounded-full hover:bg-gray-700 transition-all backdrop-blur-md"
+        >
+          <ChevronLeft className="w-6 h-6 text-white" />
+        </motion.button>
 
-          {/* Anime Display */}
-          <div className="overflow-hidden w-full max-w-3xl">
-            <div
-              className="flex transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        <div className="w-full max-w-3xl overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={animeList[activeIndex].name}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.6 }}
+              className="bg-gray-900/80 border-2 border-purple-500 rounded-xl shadow-2xl p-6 text-center flex flex-col items-center transform transition-all"
             >
-              {animeList.map((anime) => (
-                <div key={anime.name} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl">
-                    <div className="relative group overflow-hidden rounded-lg">
-                      <div className="relative w-full h-[400px] overflow-hidden">
-                        <img
-                          src={anime.image}
-                          alt={anime.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                          <div className="text-center px-4">
-                            <h3 className="text-xl font-bold text-white">{anime.name}</h3>
-                            <p className="text-sm text-gray-300 mt-2">{anime.description}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="p-6 text-center">
-                      <h3 className="text-xl font-bold text-white mb-2">{anime.name}</h3>
-                      <div className="flex items-center justify-center space-x-1">
-                        {Array.from({ length: anime.rating }).map((_, index) => (
-                          <Star key={index} className="w-5 h-5 text-yellow-400 fill-current" />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Arrow */}
-          <button
-            onClick={nextAnime}
-            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-gray-800/50 rounded-full backdrop-blur-md hover:bg-gray-700 transition-all"
-          >
-            <ChevronRight className="w-6 h-6 text-white" />
-          </button>
+              <motion.img
+                src={animeList[activeIndex].image}
+                alt={animeList[activeIndex].name}
+                className="w-full h-72 object-cover rounded-xl shadow-lg transition-transform duration-500 hover:scale-105 hover:shadow-purple-500/50"
+              />
+              <h3 className="text-2xl font-bold mt-4">{animeList[activeIndex].name}</h3>
+              <p className="text-gray-300 text-sm mt-2">{animeList[activeIndex].description}</p>
+              <div className="flex items-center justify-center mt-4 space-x-1">
+                {Array.from({ length: animeList[activeIndex].rating }).map((_, index) => (
+                  <Star key={index} className="w-5 h-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
+
+        <motion.button
+          onClick={nextAnime}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-gray-800/60 rounded-full hover:bg-gray-700 transition-all backdrop-blur-md"
+        >
+          <ChevronRight className="w-6 h-6 text-white" />
+        </motion.button>
       </div>
     </div>
   );
