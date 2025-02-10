@@ -6,6 +6,7 @@ import project1 from '../images/project1.jpg';
 import project2 from '../images/project2.jpg';
 import project3 from '../images/project3.jpg';
 import project4 from '../images/project4.jpg';
+import project5 from '../images/project5.jpg';
 
 const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -28,10 +29,18 @@ const Projects = () => {
       tech: ['React', 'Node.js', 'TypeScript', 'Firebase'],
     },
     {
+      name: 'Anushyam Mangal Karyalay',
+      description: 'A Mangal Karyalay webstie buitl with Typescript...',
+      github: 'https://github.com',
+      demo: 'https://apurvatours.netlify.app/',
+      image: project5,
+      tech: ['React', 'Node.js', 'TypeScript', 'Firebase'],
+    },
+    {
       name: 'Portfolio Website',
       description: 'A personal portfolio showcasing projects...',
       github: 'https://github.com',
-      demo: 'https://portfolio.netlify.app/',
+      demo: 'https://flowenolportfolio.netlify.app/',
       image: project2,
       tech: ['React', 'Framer Motion', 'Tailwind CSS'],
     },
