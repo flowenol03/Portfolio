@@ -32,7 +32,7 @@ const Projects = () => {
       name: 'Anushyam Mangal Karyalay',
       description: 'A Mangal Karyalay webstie buitl with Typescript...',
       github: 'https://github.com',
-      demo: 'https://apurvatours.netlify.app/',
+      demo: 'https://anushyam.netlify.app//',
       image: project5,
       tech: ['React', 'Node.js', 'TypeScript', 'Firebase'],
     },
