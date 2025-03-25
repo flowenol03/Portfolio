@@ -64,9 +64,10 @@ const Hobbies = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white py-20 flex flex-col items-center">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 glitch">
         My <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Hobbies</span>
       </h2>
+
 
       <div className="relative flex items-center justify-center w-full max-w-4xl">
         <motion.button

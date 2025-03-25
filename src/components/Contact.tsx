@@ -40,7 +40,7 @@ const Contact = () => {
       <div className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Heading */}
         <motion.h2
-          className="text-5xl md:text-6xl font-bold text-center mb-16"
+          className="text-5xl md:text-6xl font-bold text-center mb-16 glitch"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
@@ -94,7 +94,7 @@ const Contact = () => {
                 >
                   <motion.div
                     whileHover={{
-                      y: [-5, 5, -5], 
+                      y: [-5, 5, -5],
                       transition: { duration: 0.6, repeat: Infinity },
                     }}
                   >

@@ -61,3 +61,44 @@
 .glass-effect {
   @apply bg-white bg-opacity-20 backdrop-blur-lg;
 }
+
+@keyframes glitch-anim {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(-3px, -3px);
+  }
+  100% {
+    transform: translate(3px, 3px);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px 0 #ff00ff, -2px -2px 0 #00ffff;
+  }
+  25% {
+    text-shadow: -2px -2px 0 #ff00ff, 2px 2px 0 #00ffff;
+  }
+  50% {
+    text-shadow: 2px -2px 0 #ff00ff, -2px 2px 0 #00ffff;
+  }
+  75% {
+    text-shadow: -2px 2px 0 #ff00ff, 2px -2px 0 #00ffff;
+  }
+  100% {
+    text-shadow: 2px 2px 0 #ff00ff, -2px -2px 0 #00ffff;
+  }
+}
+
+.glitch {
+  position: relative;
+  animation: glitch 2s infinite alternate, glitch-anim 1s infinite alternate;
+}
+
+.glitch span {
+  position: relative;
+  display: inline-block;
+  animation: glitch 2s infinite alternate, glitch-anim 1s infinite alternate;
+}

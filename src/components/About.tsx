@@ -52,13 +52,14 @@ const About = () => {
       >
         {/* Section Title */}
         <motion.h2
-          className="text-4xl md:text-5xl font-extrabold text-center mb-16"
+          className="text-4xl md:text-5xl font-extrabold text-center mb-16 glitch"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Me</span>
         </motion.h2>
+
 
         {/* Section Cards */}
         <div className="grid md:grid-cols-2 gap-10">
