@@ -58,7 +58,7 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, delay: 0.4 }}
               >
-                A passionate developer crafting creative and functional web experiences.
+                Aspiring Prompt Engineer with expertise in AI-driven content generation, prompt optimization, and LLM-based automation. Passionate about crafting effective AI prompts to enhance model efficiency and accuracy.
               </motion.p>
             </div>
 
