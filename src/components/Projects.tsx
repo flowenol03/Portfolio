@@ -29,14 +29,6 @@ const Projects = () => {
       tech: ['React', 'Node.js', 'TypeScript', 'Firebase'],
     },
     {
-      name: 'Anushyam Mangal Karyalay',
-      description: 'A Mangal Karyalay webstie buitl with Typescript...',
-      github: 'https://github.com',
-      demo: 'https://anushyam.netlify.app//',
-      image: project5,
-      tech: ['React', 'Node.js', 'TypeScript', 'Firebase'],
-    },
-    {
       name: 'Portfolio Website',
       description: 'A personal portfolio showcasing projects...',
       github: 'https://github.com',
