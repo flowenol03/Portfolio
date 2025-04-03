@@ -107,7 +107,7 @@ const Contact = () => {
             {/* Download CV Button with Neon Hover Effect */}
             <motion.div className="text-center" whileHover={{ scale: 1.1 }}>
               <a
-                href="https://drive.google.com/file/d/15BuENdV_jm05c1I-95poJAdAgNf2tDqj/view?usp=sharing"
+                href="https://drive.google.com/file/d/14lw2SU3fhI03yq6EUX-f0YD5_L_NwCoO/view?usp=sharing"
                 className="relative inline-flex items-center px-10 py-4 rounded-xl text-lg font-semibold text-white transition-all duration-300 group overflow-hidden"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-pink-600 transform scale-105 opacity-70 blur-lg transition-all duration-300 group-hover:opacity-100"></span>
