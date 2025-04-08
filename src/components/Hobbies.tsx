@@ -68,7 +68,6 @@ const Hobbies = () => {
         My <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Hobbies</span>
       </h2>
 
-
       <div className="relative flex items-center justify-center w-full max-w-4xl">
         <motion.button
           onClick={prevAnime}
@@ -113,6 +112,19 @@ const Hobbies = () => {
         >
           <ChevronRight className="w-6 h-6 text-white" />
         </motion.button>
+      </div>
+
+      {/* Dot Pagination */}
+      <div className="flex mt-8 space-x-2">
+        {animeList.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveIndex(index)}
+            className={`w-3 h-3 rounded-full transition-all ${
+              activeIndex === index ? 'bg-purple-500 w-6' : 'bg-gray-600'
+            }`}
+          />
+        ))}
       </div>
     </div>
   );

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Github, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
+
+// Import images
 import project1 from '../images/project1.jpg';
 import project2 from '../images/project2.jpg';
 import project3 from '../images/project3.jpg';
@@ -77,7 +79,6 @@ const Projects = () => {
         My <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Projects</span>
       </h2>
 
-
       <div className="relative flex items-center justify-center w-full max-w-4xl">
         <motion.button
           onClick={prevProject}
@@ -108,10 +109,20 @@ const Projects = () => {
               <h3 className="text-2xl font-bold mt-4">{projects[activeIndex].name}</h3>
               <p className="text-gray-300 text-sm mt-2">{projects[activeIndex].description}</p>
               <div className="flex items-center justify-center mt-4 space-x-4">
-                <a href={projects[activeIndex].github} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-all">
+                <a
+                  href={projects[activeIndex].github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-all"
+                >
                   <Github className="w-6 h-6" />
                 </a>
-                <a href={projects[activeIndex].demo} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-all">
+                <a
+                  href={projects[activeIndex].demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-all"
+                >
                   <ExternalLink className="w-6 h-6" />
                 </a>
               </div>
@@ -127,6 +138,19 @@ const Projects = () => {
         >
           <ChevronRight className="w-6 h-6 text-white" />
         </motion.button>
+      </div>
+
+      {/* Dot Pagination */}
+      <div className="flex mt-8 space-x-2">
+        {projects.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveIndex(index)}
+            className={`w-3 h-3 rounded-full transition-all ${
+              activeIndex === index ? 'bg-purple-500 w-6' : 'bg-gray-600'
+            }`}
+          />
+        ))}
       </div>
     </div>
   );
