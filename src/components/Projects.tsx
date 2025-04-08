@@ -6,12 +6,29 @@ import project1 from '../images/project1.jpg';
 import project2 from '../images/project2.jpg';
 import project3 from '../images/project3.jpg';
 import project4 from '../images/project4.jpg';
-import project5 from '../images/project5.jpg';
+import project5 from '../images/project5.png';
+import project6 from '../images/project6.png';
 
 const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const projects = [
+    {
+      name: 'HumanizerAI',
+      description: 'A web application built with Gen AI...',
+      github: 'https://github.com',
+      demo: 'https://humanizerai.netlify.app/',
+      image: project5,
+      tech: ['React', 'Node.js', 'TypeScript', 'WebSocket'],
+    },
+    {
+      name: 'Flowenol ChatBot',
+      description: 'A web application built with Gen AI...',
+      github: 'https://github.com',
+      demo: 'https://flowenolchatbot.netlify.app/',
+      image: project6,
+      tech: ['React', 'Node.js', 'TypeScript', 'WebSocket'],
+    },
     {
       name: 'SwarSwarup Resort',
       description: 'A web application built with TypeScript...',
