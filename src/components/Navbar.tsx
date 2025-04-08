@@ -23,6 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' }, // ✅ Skills section added
     { id: 'projects', label: 'Projects' },
     { id: 'hobbies', label: 'Hobbies' },
     { id: 'contact', label: 'Contact' },
