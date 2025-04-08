@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Tilt from 'react-parallax-tilt';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -43,7 +43,7 @@ const skills = [
     {
         name: 'LangChain',
         icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/640px-ChatGPT_logo.svg.png',
-        description: 'Framework for building GenAI-powered applications using LLMs, memory, and agents.',
+        description: 'Framework for building GenAI-powered applications.',
         level: 77,
     },
     {
@@ -104,7 +104,19 @@ const skills = [
 
 const Skills = () => {
     const [currentPage, setCurrentPage] = useState(0);
-    const skillsPerPage = 8;
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Check screen size for mobile/desktop layout
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    const skillsPerPage = isMobile ? 1 : 8;
     const totalPages = Math.ceil(skills.length / skillsPerPage);
 
     const nextPage = () => {
@@ -136,7 +148,7 @@ const Skills = () => {
                     <ChevronLeft className="w-6 h-6 text-white" />
                 </motion.button>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full px-10">
+                <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'} gap-6 w-full px-10`}>
                     <AnimatePresence mode="wait">
                         {visibleSkills.map((skill, index) => (
                             <motion.div
